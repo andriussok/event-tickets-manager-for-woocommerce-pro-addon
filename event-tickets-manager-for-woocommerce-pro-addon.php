@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Event Tickets Manager for Woocommerce Pro Addon
  * Plugin URI: https://github.com/andriussok/event-tickets-manager-for-woocommerce-pro-addon
- * Description: Add exclude days in daily event recurrence for Event Tickets Manager for Woocommerce Pro.
+ * Description: Enables you to exclude specific days from daily event recurrence schedules in Event Tickets Manager for WooCommerce Pro. Exclude any days of the week according to your event needs.
  * Version: 1.0.1
  * Author: Andrius x WPSwings
  * Author URI: https://wpswings.com/product/event-tickets-manager-for-woocommerce-pro/
