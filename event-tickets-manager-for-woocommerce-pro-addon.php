@@ -3,7 +3,7 @@
  * Plugin Name: Event Tickets Manager for Woocommerce Pro Addon
  * Plugin URI: https://github.com/andriussok/event-tickets-manager-for-woocommerce-pro-addon
  * Description: Enables you to exclude specific days from daily event recurrence schedules in Event Tickets Manager for WooCommerce Pro. Exclude any days of the week according to your event needs.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Andrius x WPSwings
  * Author URI: https://wpswings.com/product/event-tickets-manager-for-woocommerce-pro/
  * Developer: Andrius
@@ -306,7 +306,10 @@ if (class_exists('Event_Tickets_Manager_For_Woocommerce_Pro_Admin')) {
           update_post_meta($new_event_id, 'wps_etmfw_product_array', $recurring_product_data);
           update_post_meta($new_event_id, '_price', $product->get_price());
           update_post_meta($new_event_id, '_featured', 'yes');
-          update_post_meta($new_event_id, '_stock', $product->get_stock_status());
+          // fix quantity tracker for recurring events
+          update_post_meta( $new_event_id, '_manage_stock', $product->get_manage_stock() ); // inherit from parent event
+          update_post_meta( $new_event_id, '_stock', $product->get_stock_quantity() ); // inherit from parent event initial quantity
+          // update_post_meta($new_event_id, '_stock', $product->get_stock_status());
           update_post_meta($new_event_id, '_stock_status', 'instock');
           update_post_meta($new_event_id, '_sku', $product->get_sku());
           update_post_meta($new_event_id, '_thumbnail_id', $thumbnail_id);
